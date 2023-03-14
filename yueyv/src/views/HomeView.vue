@@ -27,26 +27,36 @@
       </a-menu>
     </a-layout-sider>
     <a-layout>
-      <a-layout-header :style="{ background: '#fff', padding: 0 }" />
+      <!-- <a-layout-header :style="{ background: '#fff', padding: 0 }" /> -->
+      <HeaderComponent class="a-layout-header"></HeaderComponent>
       <a-layout-content :style="{ margin: '24px 16px 0' }">
-        <div :style="{ padding: '24px', background: '#fff', minHeight: '360px' }">
-          content
+        <div :style="{ padding: '24px', background: '#fff', minHeight: '72vh' }">
+          内容区
+          <RouterView></RouterView>
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
-        <a style="color: #000" href="https://github.com/yueyv/website.git"> https://github.com/yueyv/website.git</a>
+        <a
+          style="color: #000"
+          href="https://github.com/yueyv/website.git"
+          target="_blank"
+        >
+          https://github.com/yueyv/website.git</a
+        >
       </a-layout-footer>
     </a-layout>
   </a-layout>
 </template>
 <script lang="ts">
 import { UserOutlined, VideoCameraOutlined, UploadOutlined } from "@ant-design/icons-vue";
-import { defineComponent, ref } from "vue";
+import { defineComponent, ref,onMounted } from "vue";
+import HeaderComponent from '../components/HeaderComponent.vue'
 export default defineComponent({
   components: {
     UserOutlined,
     VideoCameraOutlined,
     UploadOutlined,
+    HeaderComponent
   },
   setup() {
     const onCollapse = (collapsed: boolean, type: string) => {
@@ -57,8 +67,9 @@ export default defineComponent({
       console.log(broken);
     };
 
+    
     return {
-      selectedKeys: ref<string[]>(["4"]),
+      selectedKeys: ref<string[]>(["1"]),
       onCollapse,
       onBreakpoint,
     };
@@ -82,5 +93,18 @@ export default defineComponent({
 
 [data-theme="dark"] .site-layout-sub-header-background {
   background: #141414;
+}
+.ant-layout {
+  background: rgb(247, 203, 211) !important;
+}
+.ant-layout-sider,.ant-menu {
+  /* background-color: rgb(246, 118, 139) !important; */
+  background:rgb(248, 119, 138)!important;
+}
+.ant-menu-item-selected {
+  background-color: rgb(233, 93, 133) !important;
+}
+.ant-layout-header,.ant-layout-footer{
+  background: linear-gradient(to right,rgb(249, 198, 198),rgb(252, 172, 186))!important;
 }
 </style>
