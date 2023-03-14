@@ -5,6 +5,7 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
+    meta:{title:"首页"},
     component: HomeView
   },
   // {

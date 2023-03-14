@@ -40,7 +40,7 @@
                         <mxPoint x="430" y="30" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="17" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+                <mxCell id="17" value="login" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
                     <mxGeometry x="390" y="-70" width="80" height="80" as="geometry"/>
                 </mxCell>
             </root>

@@ -50,7 +50,7 @@
 <script lang="ts">
 import { UserOutlined, VideoCameraOutlined, UploadOutlined } from "@ant-design/icons-vue";
 import { defineComponent, ref, onMounted } from "vue";
-import HeaderComponent from "../components/HeaderComponent.vue";
+import HeaderComponent from "../components/header/HeaderComponent.vue";
 export default defineComponent({
   components: {
     UserOutlined,
