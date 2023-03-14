@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './reset.less'
 import App from './App.vue'
+import 'animate.css';
 import Antd from 'ant-design-vue';
 import router from './router'
 import "uno.css"
