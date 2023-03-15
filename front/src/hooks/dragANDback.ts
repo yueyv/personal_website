@@ -2,6 +2,7 @@
 const drag = function (odom: HTMLElement) {
     //计算元素距离页面顶部的距离和自身高度 
     //header最开始top为0 仅当-top <= header.offsetHeight的时候 说明header已经离开当前页面
+
     const h = odom.offsetHeight
     let isClient = false
     odom.addEventListener('mouseenter', function (e) {
@@ -18,8 +19,7 @@ const drag = function (odom: HTMLElement) {
 
 
     //疑问 定时器是number数据类型 但是：number下面编译会报红（不影响运行） 不知道原因
-    let timer: any
-    clearInterval(timer)
+    let timer:number =0
     timer = setInterval(function () {
         console.log(odom.offsetTop, '往上走')
         if (isClient) {
@@ -36,8 +36,7 @@ const drag = function (odom: HTMLElement) {
 }
 
 const back = function (odm: HTMLElement, domHeight: number) {
-    let timer: any
-    clearInterval(timer)
+    let timer: number=0
     timer = setInterval(function () {
         console.log(odm.offsetTop, '往下走')
         if (odm.offsetTop >= 0) {
@@ -45,7 +44,7 @@ const back = function (odm: HTMLElement, domHeight: number) {
             clearInterval(timer)
             setTimeout(() => {
                 drag(odm)
-            }, 60000);
+            }, 1000);
         } else {
             odm.style.top = odm.offsetTop + 2 + 'px'
         }
