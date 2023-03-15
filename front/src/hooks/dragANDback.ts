@@ -5,23 +5,23 @@ const drag = function (odom: HTMLElement) {
 
     const h = odom.offsetHeight
     let isClient = false
-    odom.addEventListener('mouseenter', function (e) {
+    let timer:number=0
+    odom.onmouseenter= function (e) {
         isClient = true
         clearInterval(timer)
         back(odom, h)
-    })
+    }
 
-    odom.addEventListener('mouseleave', function (e) {
+    odom.onmouseleave=function (e) {
         isClient = false
         clearInterval(timer)
-    })
+    }
 
 
-
+    clearInterval(timer)
     //疑问 定时器是number数据类型 但是：number下面编译会报红（不影响运行） 不知道原因
-    let timer:number =0
     timer = setInterval(function () {
-        console.log(odom.offsetTop, '往上走')
+        console.log(timer)
         if (isClient) {
             clearInterval(timer)
         }
@@ -37,8 +37,9 @@ const drag = function (odom: HTMLElement) {
 
 const back = function (odm: HTMLElement, domHeight: number) {
     let timer: number=0
+    clearInterval(timer)
     timer = setInterval(function () {
-        console.log(odm.offsetTop, '往下走')
+        console.log(timer)
         if (odm.offsetTop >= 0) {
             odm.style.top = 0 + 'px'
             clearInterval(timer)
@@ -49,7 +50,7 @@ const back = function (odm: HTMLElement, domHeight: number) {
             odm.style.top = odm.offsetTop + 2 + 'px'
         }
     }, 30)
-
+    
 }
 
 
