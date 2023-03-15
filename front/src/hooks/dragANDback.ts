@@ -6,13 +6,13 @@ const drag = function (odom: HTMLElement) {
     const h = odom.offsetHeight
     let isClient = false
     let timer:number=0
-    odom.onmouseenter= function (e) {
+    odom.onmouseenter= ()=> {
         isClient = true
         clearInterval(timer)
         back(odom, h)
     }
 
-    odom.onmouseleave=function (e) {
+    odom.onmouseleave=()=> {
         isClient = false
         clearInterval(timer)
     }
