@@ -1,5 +1,6 @@
 <template>
   <div class="header" ref="header">
+    <div class="time">{{ time }}</div>
     <div class="user" v-if="!isLogin">
       <UserOutlined />
       未登录
@@ -12,6 +13,16 @@ import { UserOutlined } from "@ant-design/icons-vue";
 import { ref, onMounted } from "vue";
 import drag from "../../hooks/dragANDback"
 let header = ref(null);
+let newDate=new Date();
+const time=ref<string>(newDate.getHours()+":"+newDate.getMinutes()+":"+newDate.getSeconds());
+
+
+setInterval(()=>{
+  let newDate=new Date();
+  time.value=newDate.getHours()+":"+newDate.getMinutes()+":"+newDate.getSeconds();
+  // console.log(time)
+  // nextTick()
+},1000)
 onMounted(() => {
   setTimeout(() => {
     drag((header.value as unknown) as HTMLElement);
@@ -22,6 +33,14 @@ const isLogin = ref<boolean>(false);
 </script>
 
 <style scoped>
+.time{
+  position: absolute;
+  right: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: cyan;
+  font-size: 24px;
+}
 .header {
   position: relative;
   top: 0;

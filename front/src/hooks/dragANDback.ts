@@ -21,7 +21,7 @@ const drag = function (odom: HTMLElement) {
     clearInterval(timer)
     //疑问 定时器是number数据类型 但是：number下面编译会报红（不影响运行） 不知道原因
     timer = setInterval(function () {
-        console.log(timer)
+        // console.log(timer)
         if (isClient) {
             clearInterval(timer)
         }
@@ -39,13 +39,13 @@ const back = function (odm: HTMLElement, domHeight: number) {
     let timer: number=0
     clearInterval(timer)
     timer = setInterval(function () {
-        console.log(timer)
+        // console.log(timer)
         if (odm.offsetTop >= 0) {
             odm.style.top = 0 + 'px'
             clearInterval(timer)
             setTimeout(() => {
                 drag(odm)
-            }, 1000);
+            }, 60000);
         } else {
             odm.style.top = odm.offsetTop + 2 + 'px'
         }
