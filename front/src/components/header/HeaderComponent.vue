@@ -10,12 +10,13 @@
 <script setup lang="ts">
 import { UserOutlined } from "@ant-design/icons-vue";
 import { ref, onMounted } from "vue";
-import drag from "../../public/dragANDback";
+import drag from "../../hooks/dragANDback"
 let header = ref(null);
 onMounted(() => {
   setTimeout(() => {
     drag((header.value as unknown) as HTMLElement);
-  }, 60000);
+  }, 1000);
+  // 为什么这里直接执行了
 });
 const isLogin = ref<boolean>(false);
 </script>
