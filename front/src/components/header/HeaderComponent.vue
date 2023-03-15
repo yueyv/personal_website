@@ -9,22 +9,28 @@
 
 <script setup lang="ts">
 import { UserOutlined } from "@ant-design/icons-vue";
-import { ref,onMounted } from "vue";
-let header = ref(null)
-onMounted(()=>{
-    setTimeout(() => {
-        // header.value.style.keyframes= "example"
-        console.log(header.value)
-    }, 1000);
-})
-const isLogin = ref<boolean>(false)
+import { ref, onMounted } from "vue";
+import drag from "../../public/dragANDback";
+let header = ref(null);
+onMounted(() => {
+  setTimeout(() => {
+    drag((header.value as unknown) as HTMLElement);
+  }, 60000);
+});
+const isLogin = ref<boolean>(false);
 </script>
 
 <style scoped>
 .header {
   position: relative;
+  top: 0;
+  right: 0;
   height: 5vh;
-  background: linear-gradient(to right,rgb(249, 198, 198),rgb(252, 172, 186))!important;
+  background: linear-gradient(
+    to right,
+    rgb(249, 198, 198),
+    rgb(252, 172, 186)
+  ) !important;
 }
 .user {
   position: absolute;
@@ -32,8 +38,7 @@ const isLogin = ref<boolean>(false)
   top: 50%;
   transform: translateY(-50%);
 }
-@keyframes example {
-  from {background-color: red;}
-  to {background-color: yellow;}
-}
+/* .animate__fadeOutUp{
+  --animate-duration: 2s!important;
+} */
 </style>
