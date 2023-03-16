@@ -10,19 +10,19 @@
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <a-menu-item key="1">
           <user-outlined />
-          <span class="nav-text">nav 1</span>
+          <span class="nav-text">狼窝</span>
         </a-menu-item>
         <a-menu-item key="2">
           <video-camera-outlined />
-          <span class="nav-text">nav 2</span>
+          <span class="nav-text">复习资料</span>
         </a-menu-item>
         <a-menu-item key="3">
           <upload-outlined />
-          <span class="nav-text">nav 3</span>
+          <span class="nav-text">学习资料</span>
         </a-menu-item>
         <a-menu-item key="4">
           <user-outlined />
-          <span class="nav-text">nav 4</span>
+          <span class="nav-text">东京热</span>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
@@ -39,7 +39,7 @@
             overflow: 'auto',
           }"
         >
-          <RouterView></RouterView>
+          <RouterView style="padding:10px"></RouterView>
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
