@@ -5,8 +5,16 @@ const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'home',
-    meta:{title:"首页"},
-    component: HomeView
+    meta: { title: "首页" },
+    component: HomeView,
+    children: [
+      {
+        path: '/',
+        name: 'home',
+        meta: { title: "首页" },
+        component: () => import("../pages/yuegao/yuegao.vue")
+      }
+    ]
   },
   // {
   //   path: '/about',

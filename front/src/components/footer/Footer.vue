@@ -1,6 +1,8 @@
 <template>
-  <div class="header" :class="{hidden:isHidden}">
-    <a-page-header style="border: 1px solid rgb(235, 237, 240)" :title="title.target" />
+  <div class="footer" :class="{ hidden: isHidden }">
+    <a style="color: #000" href="https://github.com/yueyv/website.git" target="_blank">
+      https://github.com/yueyv/website.git</a
+    >
   </div>
 </template>
 
@@ -30,18 +32,18 @@ onUnmounted(() => {
 });
 </script>
 
-<style scoped less="less">
-.header {
+<style scoped>
+.footer {
   position: relative;
   background: rgb(206, 101, 101);
-  top: 0;
+  bottom: 0;
   width: 100%;
   height: 50px;
+  line-height: 50px;
   color: #fff;
   transition: transform 0.3s linear;
 }
-.header.hidden {
-  transform: translateY(-70px);
-  
+.footer.hidden {
+  transform: translateY(70px);
 }
 </style>
