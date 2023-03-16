@@ -2,9 +2,11 @@
   <a-layout style="height: 100vh">
     <a-layout-sider
       breakpoint="lg"
-      collapsed-width="0"
+      collapsed-width="60"
       @collapse="onCollapse"
       @breakpoint="onBreakpoint"
+      collapsible
+      :trigger="'Collapse'"
     >
       <div class="logo" />
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
@@ -34,12 +36,12 @@
           :style="{
             padding: '24px',
             background: '#f8acac',
-            paddingBlock:'10px',
+            paddingBlock: '10px',
             height: '70vh',
             overflow: 'auto',
           }"
         >
-          <RouterView style="padding:10px"></RouterView>
+          <RouterView style="padding: 10px"></RouterView>
         </div>
       </a-layout-content>
       <a-layout-footer style="text-align: center">
@@ -62,6 +64,7 @@ export default defineComponent({
     Footer,
   },
   setup() {
+    const collapsed = ref<boolean>(false);
     const onCollapse = (collapsed: boolean, type: string) => {
       console.log(collapsed, type);
     };
@@ -121,4 +124,10 @@ export default defineComponent({
 ::-webkit-scrollbar-thumb {
   background-color: transparent;
 }
+.ant-layout-sider-trigger{
+  background: red!important;
+  font-weight: 900;
+  color: blue!important;
+}
+
 </style>
