@@ -1,6 +1,8 @@
 <template>
-  <div class="header" :class="{hidden:isHidden}">
-    <a-page-header style="border: 1px solid rgb(235, 237, 240)" :title="title.target" />
+  <div>
+    <div class="header" :class="{ hidden: isHidden }">
+      <a-page-header style="border: 1px solid rgb(235, 237, 240)" :title="title.target" />
+    </div>
   </div>
 </template>
 
@@ -42,6 +44,5 @@ onUnmounted(() => {
 }
 .header.hidden {
   transform: translateY(-70px);
-  
 }
 </style>

@@ -40,6 +40,7 @@ onUnmounted(() => {
   width: 100%;
   height: 50px;
   line-height: 50px;
+  text-align: center;
   color: #fff;
   transition: transform 0.3s linear;
 }
