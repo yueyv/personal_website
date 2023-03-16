@@ -138,4 +138,7 @@ export default defineComponent({
   background: rgb(240, 115, 196);
   padding: 10px;
 }
+.ant-page-header{
+  border: 0!important;
+}
 </style>

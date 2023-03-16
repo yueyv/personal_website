@@ -35,7 +35,7 @@ onUnmounted(() => {
 <style scoped less="less">
 .header {
   position: relative;
-  background: rgb(206, 101, 101);
+  background: rgb(248, 119, 138) !important;
   top: 0;
   width: 100%;
   height: 50px;
