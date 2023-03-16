@@ -1,15 +1,12 @@
 <template>
-
-  <div>
-    <div class="header" :class="{ hidden: isHidden }">
-      <a-page-header style="border: 1px solid rgb(235, 237, 240)" :title="title.target" />
-
-    </div>
+  <div class="footer" :class="{ hidden: isHidden }">
+    <a style="color: #000" href="https://github.com/yueyv/website.git" target="_blank">
+      https://github.com/yueyv/website.git</a
+    >
   </div>
 </template>
 
 <script setup lang="ts">
-
 const title = reactive({ target: "Yueyv" });
 const isHidden = ref(false);
 let timeoutId: any = null;
@@ -32,23 +29,22 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener("mousemove", onMouseMove);
-
 });
 </script>
 
-
-<style scoped less="less">
-
-.header {
+<style scoped>
+.footer {
   position: relative;
   background: rgb(248, 119, 138) !important;
-  top: 0;
+  bottom: 0;
   width: 100%;
   height: 50px;
+  line-height: 50px;
+  text-align: center;
   color: #fff;
   transition: transform 0.3s linear;
 }
-.header.hidden {
-  transform: translateY(-70px);
+.footer.hidden {
+  transform: translateY(70px);
 }
 </style>
