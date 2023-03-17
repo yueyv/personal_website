@@ -43,9 +43,7 @@
             overflow: 'auto',
           }"
         >
-          <div class="content-wrap">
-            <RouterView></RouterView>
-          </div>
+          <RouterView></RouterView>
         </div>
       </a-layout-content>
       <div style="background: #f8acac">
@@ -134,11 +132,11 @@ export default defineComponent({
   color: blue !important;
   height: 50px !important;
 }
-.content-wrap {
+/* .content-wrap {
   background: rgb(240, 115, 196);
   padding: 10px;
-}
-.ant-page-header{
-  border: 0!important;
+} */
+.ant-page-header {
+  border: 0 !important;
 }
 </style>
