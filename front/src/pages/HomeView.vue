@@ -99,17 +99,44 @@ export default defineComponent({
 .ant-layout-sider,
 .ant-menu {
   /* background-color: rgb(246, 118, 139) !important; */
-  background: rgb(248, 119, 138) !important;
+  background: rgb(248, 204, 211) !important;
 }
 .ant-menu-item-selected {
-  background-color: rgb(233, 93, 133) !important;
+  background-color: rgb(253, 233, 239) !important;
 }
 .ant-layout-header,
 .ant-layout-footer {
+<<<<<<< Updated upstream
   background: linear-gradient(
     to right,
     rgb(249, 198, 198),
     rgb(252, 172, 186)
   ) !important;
+=======
+  background: rgb(248, 207, 207) !important;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+  background-color: transparent;
+}
+
+/* 隐藏滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: transparent;
+}
+.ant-layout-sider-trigger {
+  background: rgb(253, 230, 230) !important;
+  font-weight: 900;
+  color: rgb(190, 190, 249) !important;
+  height: 50px !important;
+}
+/* .content-wrap {
+  background: rgb(240, 115, 196);
+  padding: 10px;
+} */
+.ant-page-header {
+  border: 0 !important;
+>>>>>>> Stashed changes
 }
 </style>

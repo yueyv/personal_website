@@ -43,6 +43,10 @@ const isLogin = ref<boolean>(false);
 }
 .header {
   position: relative;
+<<<<<<< Updated upstream
+=======
+  background-image: linear-gradient(0deg,rgba(255, 210, 210, 0.73),rgba(255, 187, 187, 0.73)) !important;
+>>>>>>> Stashed changes
   top: 0;
   right: 0;
   height: 5vh;
