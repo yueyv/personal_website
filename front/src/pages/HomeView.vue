@@ -132,9 +132,9 @@ export default defineComponent({
   background-color: transparent;
 }
 .ant-layout-sider-trigger {
-  background: red !important;
+  background: rgb(254, 235, 235) !important;
   font-weight: 900;
-  color: blue !important;
+  color: rgb(253, 110, 110) !important;
   height: 50px !important;
 }
 /* .content-wrap {

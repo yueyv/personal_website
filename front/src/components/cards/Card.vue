@@ -36,7 +36,7 @@ onMounted(() => {
   height: 0;
   border-radius: 5px;
   padding-bottom: 100%;
-  background: blue;
+  background-image: radial-gradient(rgba(255, 221, 213, 0.944),rgb(253, 197, 185));
   position: relative;
   > div {
     padding: 10px;
