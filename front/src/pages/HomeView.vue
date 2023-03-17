@@ -114,6 +114,11 @@ export default defineComponent({
 }
 .ant-layout-header,
 .ant-layout-footer {
+  background: linear-gradient(
+    to right,
+    rgb(249, 198, 198),
+    rgb(252, 172, 186)
+  ) !important;
   background: rgb(206, 101, 101) !important;
 }
 

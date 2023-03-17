@@ -41,7 +41,7 @@ onUnmounted(() => {
 
 .header {
   position: relative;
-  background: rgb(248, 119, 138) !important;
+  background-image: linear-gradient(0deg,rgba(255, 210, 210, 0.73),rgba(255, 187, 187, 0.73)) !important;
   top: 0;
   width: 100%;
   height: 50px;
