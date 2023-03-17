@@ -1,12 +1,15 @@
 <template>
+
   <div>
     <div class="header" :class="{ hidden: isHidden }">
       <a-page-header style="border: 1px solid rgb(235, 237, 240)" :title="title.target" />
+
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+
 const title = reactive({ target: "Yueyv" });
 const isHidden = ref(false);
 let timeoutId: any = null;
@@ -29,10 +32,13 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener("mousemove", onMouseMove);
+
 });
 </script>
 
+
 <style scoped less="less">
+
 .header {
   position: relative;
   background: rgb(248, 119, 138) !important;

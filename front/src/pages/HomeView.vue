@@ -68,11 +68,11 @@ export default defineComponent({
   setup() {
     const collapsed = ref<boolean>(false);
     const onCollapse = (collapsed: boolean, type: string) => {
-      console.log(collapsed, type);
+      // console.log(collapsed, type);
     };
 
     const onBreakpoint = (broken: boolean) => {
-      console.log(broken);
+      // console.log(broken);
     };
 
     return {
