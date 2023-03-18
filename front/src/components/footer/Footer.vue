@@ -1,12 +1,14 @@
 <template>
   <div class="footer" :class="{ hidden: isHidden }">
-    <a style="color: #000" href="https://github.com/yueyv/website.git" target="_blank">
-      https://github.com/yueyv/website.git</a
+    <a id="time" href="#" target="_blank">
+      {{Time.innerTime}}</a
     >
   </div>
 </template>
 
 <script setup lang="ts">
+import {useTimeStore} from '../../store/useTime';
+const Time=useTimeStore()
 const title = reactive({ target: "Yueyv" });
 const isHidden = ref(false);
 let timeoutId: any = null;
@@ -33,11 +35,14 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
+#time{
+  color: rgb(192, 251, 255);
+  font-size: 42px;
+}
 .footer {
   position: relative;
   background: rgb(248, 119, 138) !important;
   bottom: 0;
-  width: 100%;
   height: 50px;
   line-height: 50px;
   text-align: center;

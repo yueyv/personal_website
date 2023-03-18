@@ -1,19 +1,24 @@
 <template>
-
   <div>
     <div class="header" :class="{ hidden: isHidden }">
-      <a-page-header style="border: 1px solid rgb(235, 237, 240)" :title="title.target" />
-
+      <div id="time">{{currentTime}}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-
-const title = reactive({ target: "Yueyv" });
+import {useTimeStore} from '../../store/useTime';
+const Time=useTimeStore()
+const date=new Date()
+const currentTime=ref(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds())
 const isHidden = ref(false);
 let timeoutId: any = null;
-
+setInterval(()=>{
+  let date=new Date()
+  currentTime.value=date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
+  Time.setLeastTime(currentTime.value)
+  Time.setInnerTime()
+},1000)
 function onMouseMove() {
   if (timeoutId) {
     clearTimeout(timeoutId);
@@ -27,6 +32,7 @@ function onMouseMove() {
 }
 
 onMounted(() => {
+  Time.setFirstTime();
   document.addEventListener("mousemove", onMouseMove);
 });
 
@@ -38,7 +44,16 @@ onUnmounted(() => {
 
 
 <style scoped less="less">
-
+#time{
+  display: inline-block;
+  position: relative !important; 
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%,-50%) !important;
+  font-size: 42px;
+  font-style: inherit;
+  color: lightseagreen;
+}
 .header {
   position: relative;
   background-image: linear-gradient(0deg,rgba(255, 210, 210, 0.73),rgba(255, 187, 187, 0.73)) !important;

@@ -12,19 +12,19 @@
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <a-menu-item key="1">
           <user-outlined />
-          <span class="nav-text">狼窝</span>
+          <span class="nav-text">笔记</span>
         </a-menu-item>
         <a-menu-item key="2">
           <video-camera-outlined />
-          <span class="nav-text">复习资料</span>
+          <span class="nav-text">样式</span>
         </a-menu-item>
         <a-menu-item key="3">
           <upload-outlined />
-          <span class="nav-text">学习资料</span>
+          <span class="nav-text">结构</span>
         </a-menu-item>
         <a-menu-item key="4">
           <user-outlined />
-          <span class="nav-text">东京热</span>
+          <span class="nav-text">参考资料</span>
         </a-menu-item>
       </a-menu>
     </a-layout-sider>
