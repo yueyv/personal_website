@@ -16,7 +16,6 @@ let timeoutId: any = null;
 setInterval(()=>{
   let date=new Date()
   currentTime.value=date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
-  Time.setLeastTime(currentTime.value)
   Time.setInnerTime()
 },1000)
 function onMouseMove() {
