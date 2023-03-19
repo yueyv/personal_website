@@ -41,7 +41,7 @@ onUnmounted(() => {
 }
 .footer {
   position: relative;
-  background: rgb(248, 119, 138) !important;
+  background:transparent;
   bottom: 0;
   height: 50px;
   line-height: 50px;
