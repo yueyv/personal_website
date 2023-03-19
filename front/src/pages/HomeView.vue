@@ -30,14 +30,15 @@
     </a-layout-sider>
     <a-layout>
       <!-- <a-layout-header :style="{ background: '#fff', padding: 0 }" /> -->
-      <div style="background: #f8acac">
+      <!-- //f8acac -->
+      <a-layout-header>
         <HeaderComponent style="margin-bottom: 24px"></HeaderComponent>
-      </div>
+      </a-layout-header>
       <a-layout-content style="flex: 1">
         <div
           :style="{
             padding: '24px',
-            background: '#f8acac',
+
             paddingBlock: '10px',
             height: '100%',
             overflow: 'auto',
@@ -46,9 +47,7 @@
           <RouterView></RouterView>
         </div>
       </a-layout-content>
-      <div style="background: #f8acac">
-        <Footer></Footer>
-      </div>
+      <a-layout-footer style="height: 50px;padding:0"> <Footer></Footer></a-layout-footer>
     </a-layout>
   </a-layout>
 </template>

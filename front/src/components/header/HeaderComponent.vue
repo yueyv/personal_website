@@ -1,23 +1,27 @@
 <template>
   <div>
     <div class="header" :class="{ hidden: isHidden }">
-      <div id="time">{{currentTime}}</div>
+      <div id="time">{{ currentTime }}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import {useTimeStore} from '../../store/useTime';
-const Time=useTimeStore()
-const date=new Date()
-const currentTime=ref(date.getHours()+":"+date.getMinutes()+":"+date.getSeconds())
+import { useTimeStore } from "../../store/useTime";
+const Time = useTimeStore();
+const date = new Date();
+const currentTime = ref(
+  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+);
 const isHidden = ref(false);
 let timeoutId: any = null;
+
 setInterval(()=>{
   let date=new Date()
   currentTime.value=date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()
   Time.setInnerTime()
 },1000)
+
 function onMouseMove() {
   if (timeoutId) {
     clearTimeout(timeoutId);
@@ -37,30 +41,28 @@ onMounted(() => {
 
 onUnmounted(() => {
   document.removeEventListener("mousemove", onMouseMove);
-
 });
 </script>
 
-
 <style scoped less="less">
-#time{
+#time {
   display: inline-block;
-  position: relative !important; 
+  position: relative !important;
   left: 50% !important;
   top: 50% !important;
-  transform: translate(-50%,-50%) !important;
+  transform: translate(-50%, -50%) !important;
   font-size: 42px;
   font-style: inherit;
   color: lightseagreen;
 }
 .header {
   position: relative;
-  background-image: linear-gradient(0deg,rgba(255, 210, 210, 0.73),rgba(255, 187, 187, 0.73)) !important;
+  background: transparent;
   top: 0;
   width: 100%;
   height: 50px;
   color: #fff;
-  transition: transform 0.3s linear;
+  transition: transform 2s linear;
 }
 .header.hidden {
   transform: translateY(-70px);
