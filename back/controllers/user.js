@@ -9,7 +9,7 @@ const useController={
                 data:userData
             })
         }catch(e){
-            res.json({code:0,message:"default",data:err})
+            res.json({code:0,message:"default",data:e})
         }
     }
 }
