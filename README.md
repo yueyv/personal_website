@@ -8,7 +8,6 @@ unocss,animate.css
 
 express-generator,knex,nodemon,winston
 
-https://juejin.cn/post/6914891222884564999
 
 ## 数据库
 
