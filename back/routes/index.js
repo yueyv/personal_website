@@ -1,11 +1,15 @@
 var express = require('express');
-const useController = require('../controllers/user');
+// const useControllerUser = require('../controllers/user');
+const useControllerNote = require('../controllers/note');
+const useControllerStyle = require('../controllers/style');
 var router = express.Router();
 router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
-router.get('/get_user', useController.showUser)
+// router.get('/get_user', useControllerUser.showUser)
 /* GET home page. */
+router.get('/get_note', useControllerNote.showNote)
 
+router.get('/get_style', useControllerStyle.showStyle)
 
 module.exports = router;
