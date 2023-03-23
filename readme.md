@@ -12,3 +12,8 @@ https://juejin.cn/post/6914891222884564999
 
 ## 数据库
 
+​    host: '114.132.50.228',
+
+​    port: '3306',
+
+​    database: 'website'
