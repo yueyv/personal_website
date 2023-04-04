@@ -1,6 +1,6 @@
 FROM nginx
  
-MAINTAINER yueyv
+# MAINTAINER yueyv
  
 RUN rm /etc/nginx/conf.d/default.conf
  

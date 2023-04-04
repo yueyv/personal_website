@@ -6,6 +6,9 @@ class Base {
     all() {
         return knex(this.table).select();
     }
+    inquire(id){
+        return knex(this.table).where('id','=',id)
+    }
     insert(params){
         return knex(this.table).insert(params)  
     }
