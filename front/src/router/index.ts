@@ -1,9 +1,10 @@
-import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
+import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import HomeView from '../pages/HomeView.vue'
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
+    alias:'/home',
     name: 'home',
     meta: { title: "首页" },
     component: HomeView,
@@ -16,6 +17,30 @@ const routes: Array<RouteRecordRaw> = [
       }
     ]
   },
+  {
+    path:'/login',
+    name:'登录',
+    meta:{
+        title:'登录'
+    },
+    component:()=>import('../components/login/main.vue')
+},
+{
+    path:'/loading',
+    name:'loading',
+    meta:{
+        title:'验证中',
+    },
+    component:()=>import('../components/loading/main.vue')
+},
+{
+    path:'/register',
+    name:'注册',
+    meta:{
+        title:'注册'
+    },
+    component:()=>import('../components/register/main.vue')
+},
   // {
   //   path: '/about',
   //   name: 'about',
@@ -27,7 +52,7 @@ const routes: Array<RouteRecordRaw> = [
 ]
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes
 })
 

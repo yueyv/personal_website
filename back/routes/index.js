@@ -14,4 +14,5 @@ router.get('/get_note', useControllerNote.showNote)
 router.get('/get_style', useControllerStyle.showStyle)
 
 router.post('/login',useControllerUser.login)
+router.post('/register',useControllerUser.register)
 module.exports = router;
