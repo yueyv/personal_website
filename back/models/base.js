@@ -10,7 +10,7 @@ class Base {
         return knex(this.table).where('id','=',id)
     }
     insert(params){
-        return knex(this.table).insert(params)  
+        return knex(this.table).insert(params)
     }
     update(id,params) {
         return knex(this.table).where('id','=',id).update(params)

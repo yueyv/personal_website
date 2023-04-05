@@ -2,12 +2,18 @@
   <div>
     <div class="header" :class="{ hidden: isHidden }">
       <div id="time">{{ currentTime }}</div>
+      <div id="user" @click="login()">
+        <img src="/FeHeart.svg" alt="no">
+        {{ userId }}</div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { message } from "ant-design-vue";
 import { useTimeStore } from "../../store/useTime";
+import { useRouter } from "vue-router";
+const router=useRouter()
 const Time = useTimeStore();
 const date = new Date();
 const currentTime = ref(
@@ -15,6 +21,13 @@ const currentTime = ref(
 );
 const isHidden = ref(false);
 let timeoutId: any = null;
+// 解码
+
+let userId=window.atob(JSON.parse(sessionStorage.getItem("userId")??JSON.stringify({"token":`${window.btoa("Not logined in")}`})).token) 
+
+function login(){
+  router.push('/login')
+}
 
 setInterval(()=>{
   let date=new Date()
@@ -55,6 +68,16 @@ onUnmounted(() => {
   font-style: inherit;
   color: lightseagreen;
 }
+#user{
+  display: inline-block;
+  position: relative !important;
+  left: 70% !important;
+  top: 40% !important;
+  transform: translate(-50%, -50%) !important;
+  font-size: 22px;
+  color: lightseagreen;
+}
+
 .header {
   position: relative;
   background: transparent;
