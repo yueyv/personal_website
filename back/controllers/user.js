@@ -25,8 +25,6 @@ const useController = {
             let data = JSON.parse(JSON.stringify(userData))
             const newData = { ...data }['0']
             const useId = Buffer.from(newData.id, 'utf-8').toString('base64')
-
-
             if (newData.password == pwd) {
                 res.json({
                     code: 200,
