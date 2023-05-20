@@ -1,48 +1,65 @@
 import { createApp } from 'vue'
-import './reset.less'
+import './assets/less/reset.less'
 import App from './App.vue'
-import 'animate.css';
-import Antd from 'ant-design-vue';
-import router from './router'
-import "uno.css"
-import { createPinia, PiniaPluginContext } from 'pinia'
+import ElementPlus from 'element-plus'
 import 'ant-design-vue/dist/antd.css';
+import Antd from 'ant-design-vue';
+import 'uno.css';
+import 'animate.css';
+import { createPinia, PiniaPluginContext } from "pinia"
+import { da } from 'element-plus/es/locale';
+import VueLazyload from 'vue-lazyload'
 
-type Options = {
-    key?: string
+import {router} from './router/index';
+// pinia 持久化插件
+type Options={
+    key?:string
 }
 
 const setStorage = (key: string, value: any) => {
     localStorage.setItem(key, JSON.stringify(value))
 }
-const getStorage = (key: string) => {
-    return localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key) as string) : {}
+const getStorage=(key:string)=>{
+    return localStorage.getItem(key)? JSON.parse(localStorage.getItem(key) as string):{}
 }
-const __piniaKey__ = 'firstTime'
-const piniaPlugin = (options: Options) => {
+const __piniaKey__ ='key'
+const piniaPlugin = (options:Options) => {
     return (context: PiniaPluginContext) => {
         const { store } = context
-        const data = getStorage(`${options?.key ?? __piniaKey__}-${store.$id}`)
-
+        const data=getStorage(`${options?.key ?? __piniaKey__}-${store.$id}`)
+    
         store.$subscribe(() => {
-            setStorage(`${options?.key ?? __piniaKey__}-${store.$id}`, toRaw(store.$state))
+            setStorage(`${options?.key ?? __piniaKey__}-${store.$id}`,toRaw(store.$state))
         })
-        // console.log(store)
+        console.log(store)
         return {
             ...data
         }
     }
 
 }
-
 const store = createPinia()
 
 store.use(piniaPlugin({
     key: "pinia"
 }))
-const app = createApp(App)
+
+const whilelist=['/']
+router.beforeEach((to,from,next)=>{
+    document.title=to.meta.title as string
+    next()
+})
+
+export const app = createApp(App)
+// app.config.globalProperties.$env='dev'
 app.use(Antd)
 app.use(store)
-app.use(router).mount('#app')
-
-
+app.use(router)
+app.use(VueLazyload,{
+    preLoad:1,
+    error:new URL(`assets/images/0.jpg`, import.meta.url).href,
+    loading:new URL(`assets/gif/loading.gif`, import.meta.url).href,
+    attempt:1
+})
+app.use(ElementPlus)
+app.mount('#app')

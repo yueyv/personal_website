@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["element-plus/global"],
     "target": "ESNext",
     "useDefineForClassFields": true,
     "module": "ESNext",
@@ -13,6 +14,6 @@
     "skipLibCheck": true,
     "noEmit": true
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "src/hooks/deBounce.js"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

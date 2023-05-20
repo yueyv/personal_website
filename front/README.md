@@ -1,18 +1,55 @@
-# Vue 3 + TypeScript + Vite
+# Devdependencies
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+    unplugin-auto-import
 
-## Recommended IDE Setup
+www
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+    unplugin-vue-components
 
-## Type Support For `.vue` Imports in TS
+    eslint
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+    unocss
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+    tailWindCss
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+    animate.css
+
+图片懒加载
+
+vue-lazyload
+
+防抖节流
+
+## Dependencies
+
+## technique
+
+v-has-show
+
+v-show
+
+## hooks
+
+image to base64
+
+## UI
+
+element-plus ant-design-vue message.info
+
+## async
+
+async await  nextTick
+
+promise
+
+settimeout
+
+cleartimeout
+
+### docker
+
+nginx 正向代理
+
+### mock
+
+拦截axios模拟信号发送
