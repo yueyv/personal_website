@@ -1,3 +1,5 @@
 export const enum Names{
-    TEST='TEST'
+    USER='user',
+    TOKEN='token',
+    INTERTIME='interTime'
 }
